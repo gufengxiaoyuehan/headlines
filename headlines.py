@@ -15,18 +15,16 @@ app = Flask(__name__)
 
 @app.route("/", methods=['GET',"POST"])
 def get_news():
-    # query = request.form.get("publication")
-    # if not query or query.lower() not in RSS_FEEDS:
-        # publication = "bbc"
-    # else:
-        # publication = query.lower()
-    # feed = feedparser.parse(RSS_FEEDS[publication])
-    # first_article = feed["entries"][0]
-    # return render_template("home.html", articles=feed["entries"]
-            # ,domain=publication)
-    return """
-    <b>王会敏，我爱你</b>
-    """
+    query = request.form.get("publication")
+    if not query or query.lower() not in RSS_FEEDS:
+        publication = "bbc"
+    else:
+        publication = query.lower()
+    feed = feedparser.parse(RSS_FEEDS[publication])
+    first_article = feed["entries"][0]
+    return render_template("home.html", articles=feed["entries"]
+            ,domain=publication)
+   
 
 
 if __name__ == "__main__":
