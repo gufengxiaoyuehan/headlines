@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 from flask import Flask
 from flask import render_template
@@ -24,7 +25,7 @@ def get_news():
     # return render_template("home.html", articles=feed["entries"]
             # ,domain=publication)
     return """
-    <b>王文慧，我爱你</b>
+    <b>王会敏，我爱你</b>
     """
 
 
