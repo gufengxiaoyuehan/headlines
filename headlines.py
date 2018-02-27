@@ -10,7 +10,7 @@ import feedparser
 import json
 import sys
 
-if sys.version[0] == 2:
+if sys.version[0] == "2":
     from urllib import quote
     from urllib2 import urlopen 
 else:
